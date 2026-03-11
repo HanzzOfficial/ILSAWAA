@@ -26,8 +26,23 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Fungsi untuk memasukkan data ke HTML secara otomatis
-document.getElementById('g-name').innerText = guildInfo.name;
-document.getElementById('g-level').innerText = guildInfo.level;
-document.getElementById('g-ember').innerText = guildInfo.ember;
+// Fitur Tabs untuk Roster Tim (10 Tim)
+const tabBtns = document.querySelectorAll('.tab-btn');
+const teamContents = document.querySelectorAll('.team-content');
 
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Hapus class active dari semua tombol dan konten
+        tabBtns.forEach(b => b.classList.remove('active'));
+        teamContents.forEach(content => content.classList.remove('active'));
+
+        // Tambahkan class active ke tombol yang diklik
+        btn.classList.add('active');
+
+        // Ambil ID target dari atribut data-target
+        const targetId = btn.getAttribute('data-target');
+        
+        // Tampilkan konten tim yang sesuai
+        document.getElementById(targetId).classList.add('active');
+    });
+});
