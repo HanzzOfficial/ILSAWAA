@@ -45,4 +45,18 @@ tabBtns.forEach(btn => {
         // Tampilkan konten tim yang sesuai
         document.getElementById(targetId).classList.add('active');
     });
+
 });
+
+// Cukup edit bagian ini saja jika ada perubahan
+const guildInfo = {
+    name: "ILSAWAA IND",
+    level: "3",
+    ember: "25.000",
+    logoUrl: "https://imgur.com/xTOAVJR.png"
+};
+
+// Fungsi untuk memasukkan data ke HTML secara otomatis
+document.getElementById('g-name').innerText = guildInfo.name;
+document.getElementById('g-level').innerText = guildInfo.level;
+document.getElementById('g-ember').innerText = guildInfo.ember;
